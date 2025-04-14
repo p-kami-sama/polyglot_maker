@@ -109,33 +109,39 @@ def create_polyglot(input: str, create: str, verbose: bool = False):
 
 
 
-def merge_files(input: str, keep: str, output: str,verbose: bool = False, start: bool = False, overwrite: bool = False, args=None):
-    # args.input, args.keep, args.output, args.start
-    print('merge_files: pendiente de implementar')
-    if  (get_extension(input), get_extension(keep)) not in combinations_list.keys() or \
-        get_extension(output) not in combinations_list[get_extension(input), get_extension(keep)]:
+
+def validate_combination(input: str, keep: str, output: str):
+    if (get_extension(input), get_extension(keep)) not in combinations_list.keys() or \
+            get_extension(output) not in combinations_list[get_extension(input), get_extension(keep)]:
         print(f"Error: The combination of {get_extension(input)} and {get_extension(keep)} into {get_extension(output)} is not supported.")
         sys.exit(1)
+
+
+def merge_files(input: str, keep: str, output: str,verbose: bool = False, start: bool = False, overwrite: bool = False, args=None):
+    # args.input, args.keep, args.output, args.start
+    validate_combination(input, keep, output)
     
-    else:
-        if verbose:
-            print(f"Combining {input} and {keep} into {output}.")
-            
-        if get_extension(input) == 'pdf' and get_extension(keep) == 'mp3':
+
+    if verbose:
+        print(f"Combining {input} and {keep} into {output}.")
+        
+    if get_extension(input) == 'pdf':
+        if get_extension(keep) == 'mp3':
             merge_pdf.merge_pdf_mp3(input, keep, output, verbose, start)
-        elif get_extension(input) == 'pdf' and get_extension(keep) == 'sh':
+        elif get_extension(keep) == 'sh':
             merge_pdf.merge_pdf_sh(input, keep, output, verbose, start)
-        elif get_extension(input) == 'pdf' and get_extension(keep) == 'rb':
+        elif get_extension(keep) == 'rb':
             merge_pdf.merge_pdf_ruby(input, keep, output, verbose, start)
-        elif get_extension(input) == 'pdf' and get_extension(keep) == 'python':
+        elif get_extension(keep) == 'python':
             merge_pdf.merge_pdf_python(input, keep, output, verbose, start)
 
-        elif get_extension(input) == 'bmp' and get_extension(keep) == 'lua':
+    elif get_extension(input) == 'bmp':
+        if get_extension(keep) == 'lua':
             if overwrite:
                 merge_bitmap.merge_bitmap_lua_overwrite(input, keep, output, verbose)
             else:
                 merge_bitmap.merge_bitmap_lua(input, keep, output, verbose)
-        print(f"Polyglot file {output} created successfully.")
+    print(f"Polyglot file {output} created successfully.")
 
 
 def file_exists(file_path):
