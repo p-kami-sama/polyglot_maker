@@ -41,7 +41,7 @@ def overwrite_end_image(bitman_raw_image: bytes, end_image: str ,end_image_subst
 
 
 # Create a space between the header and the image bytes to hide code
-def merge_bitmap_lua(lua_code_file: str, archivo_origen: str, output_file: str, verbose: bool = False):
+def merge_bitmap_lua(bitmap_file: str, lua_code_file: str, output_file: str, verbose: bool = False):
     with open(lua_code_file, 'r') as lua_f:   # open .lua file
         codigo = lua_f.read()
 
@@ -63,11 +63,11 @@ def merge_bitmap_lua(lua_code_file: str, archivo_origen: str, output_file: str, 
 
     file_size_field_bytes = file_size_field.encode('utf-8')
 
-    cabecera_datos, cabecera_bytes = read_bitmap_header(archivo_origen)
+    cabecera_datos, cabecera_bytes = read_bitmap_header(bitmap_file)
     if verbose:
         print("Original BMP header:", cabecera_datos) 
 
-    bitmap_raw_image = extract_raw_image_from_bitmap(archivo_origen)
+    bitmap_raw_image = extract_raw_image_from_bitmap(bitmap_file)
     bitmap_raw_image = overwrite_end_image(bitmap_raw_image, end_image ,end_image_substitute, verbose)
 
     with open(output_file, "wb") as f:
@@ -92,7 +92,7 @@ def merge_bitmap_lua(lua_code_file: str, archivo_origen: str, output_file: str, 
 
 
 # overwrite part of the image with the code
-def merge_bitmap_lua_overwrite(lua_code_file, archivo_origen, output_file, verbose=False):
+def merge_bitmap_lua_overwrite(bitmap_file: str, lua_code_file: str, output_file: str, verbose: bool = False):
 
     with open(lua_code_file, 'r') as lua_f:   # open .lua file
         codigo = lua_f.read()
@@ -111,10 +111,10 @@ def merge_bitmap_lua_overwrite(lua_code_file, archivo_origen, output_file, verbo
 
     file_size_field_bytes = file_size_field.encode('utf-8')
 
-    cabecera_datos, cabecera_bytes = read_bitmap_header(archivo_origen)
+    cabecera_datos, cabecera_bytes = read_bitmap_header(bitmap_file)
 
     
-    bitman_raw_image = extract_raw_image_from_bitmap(archivo_origen)
+    bitman_raw_image = extract_raw_image_from_bitmap(bitmap_file)
 
     if len(bitman_raw_image) < required_space:
         print("The size of the bitmap is smaller than the size of the code")

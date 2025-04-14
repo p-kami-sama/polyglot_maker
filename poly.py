@@ -71,6 +71,11 @@ def add_parse_args(parser):
     )
 
     parser.add_argument(
+        "--overwrite", action="store_true",
+        help="Overwrites part of the input file to hide the keep file better."
+    )
+
+    parser.add_argument(
         "-t", "--types", action="store_true",
         help="List of file types to combine."
     )
@@ -166,6 +171,7 @@ if __name__ == "__main__":
     if args.verbose:
         print("Verbose mode activated.")
 
+    print('overwrite:', args.overwrite) 
 
     # create from 1 file
     if args.create:
@@ -201,9 +207,9 @@ if __name__ == "__main__":
             
             # args.input, args.keep, args.output, args.start, args.end
             merge_files(args.input, args.keep, args.output, args.verbose ,args.start, args.overwrite, args)
+# /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/juego.lua
+# /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/pichu.bmp
+'''
+python3 poly.py --input /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/pichu.bmp --keep /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/juego.lua --output result.bmp
 
-
-
-
-
-
+'''
