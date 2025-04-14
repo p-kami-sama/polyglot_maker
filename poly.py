@@ -3,11 +3,21 @@ import sys
 import os
 
 sys.path.append('.')
+
+
 try:
     import merge_pdf as merge_pdf
 except ImportError:
-    print("Error: Could not import local modules.")
+    print('Error: Could not import local "merge_pdf.py" module. Please ensure it is in the same directory as this script.')
     sys.exit(1)
+
+
+try:
+    import create_bitmap as create_bitmap
+except ImportError:
+    print('Error: Could not import local "create_bitmap.py" module. Please ensure it is in the same directory as this script.')
+    sys.exit(1)
+
 
 
 combinations_list = {
@@ -17,7 +27,11 @@ combinations_list = {
     ('pdf','rb'): ['pdf', 'rb'],
     ('pdf','python'): ['pdf', 'python'],
 }
-
+create_list = [
+    #--input, --create
+    ['lua', 'bmp'],
+    ['js', 'bmp'],
+]
 
 
 
@@ -74,8 +88,17 @@ def get_extension(path: str) -> str:
 def types_list():
     print('types_list: pendiente de implementar')
 
-def create_polyglot():
-    print('create_polyglot: pendiente de implementar')
+def create_polyglot(input: str, create: str, verbose: bool = False):
+    if [get_extension(input), get_extension(create)] not in create_list:
+        print(f"Error: The creation of {get_extension(input)} into {get_extension(create)} is not supported.")
+        sys.exit(1)
+
+    if get_extension(input) == 'lua' and get_extension(create) == 'bmp':
+        create_bitmap.create_bitmap_lua(input, create, verbose)
+    elif get_extension(input) == 'js' and get_extension(create) == 'bmp':
+        create_bitmap.create_bitmap_javascript(input, create, verbose)
+
+
 
 def merge_files(input: str, keep: str, output: str,verbose: bool = False, start: bool = False, end: bool = True, args=None):
     # args.input, args.keep, args.output, args.start, args.end
@@ -148,7 +171,7 @@ if __name__ == "__main__":
             sys.exit(1)
         else:
             # args.input, args.create
-            create_polyglot()
+            create_polyglot(args.input, args.create, args.verbose)
     
     # merge 2 files
     elif args.output:
@@ -171,7 +194,6 @@ if __name__ == "__main__":
             
             # args.input, args.keep, args.output, args.start, args.end
             merge_files(args.input, args.keep, args.output, args.verbose ,args.start, args.end, args)
-
 
 
 
