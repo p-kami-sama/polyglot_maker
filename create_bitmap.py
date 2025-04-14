@@ -65,8 +65,9 @@ def create_bitmap_lua(lua_file: str, output_file: str, verbose: bool = False):
         # Adding padding
         if padding_size > 3:
             f.write("\n--".encode("utf-8"))
-            for i in range(padding_size-3):
-                f.write(b"x\F0")
+            for _ in range(padding_size-3):
+                f.write("0".encode("utf-8"))
+
         elif padding_size > 0:
             for _ in range(padding_size):
                 f.write("\n".encode("utf-8"))
@@ -141,8 +142,8 @@ def create_bitmap_javascript(javascript_file: str, output_file: str, verbose: bo
         # Adding padding
         if padding_size > 3:
             f.write("\n//".encode("utf-8"))
-            for i in range(padding_size-3):
-                f.write(b"x\F0")
+            for _ in range(padding_size-3):
+                f.write("0".encode("utf-8"))
         elif padding_size > 0:
             for _ in range(padding_size):
                 f.write("\n".encode("utf-8"))

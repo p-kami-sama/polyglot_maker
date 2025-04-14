@@ -4,11 +4,16 @@ import os
 
 sys.path.append('.')
 
-
 try:
     import merge_pdf as merge_pdf
 except ImportError:
     print('Error: Could not import local "merge_pdf.py" module. Please ensure it is in the same directory as this script.')
+    sys.exit(1)
+
+try:
+    import merge_bitmap as merge_bitmap
+except ImportError:
+    print('Error: Could not import local "merge_bitmap.py" module. Please ensure it is in the same directory as this script.')
     sys.exit(1)
 
 
@@ -26,6 +31,9 @@ combinations_list = {
     ('pdf','sh'): ['pdf', 'sh'],
     ('pdf','rb'): ['pdf', 'rb'],
     ('pdf','python'): ['pdf', 'python'],
+
+    ('bmp','lua'): ['bmp', 'lua'],
+
 }
 create_list = [
     #--input, --create
@@ -59,13 +67,9 @@ def add_parse_args(parser):
 
     parser.add_argument(
         "-s", "--start", "--hide-start", action="store_true",
-        help="Hide extra data at the beginning of the file. It may not always be usable and is not compatible with --hide-end."
+        help="Hide extra data at the beginning of the file. It may not always be usable."
     )
 
-    parser.add_argument(
-        "-e", "--end", "--hide-end", action="store_true",
-        help="Hide extra data at the end of the file. It may not always be usable and is not compatible with --hide-start."
-    )
     parser.add_argument(
         "-t", "--types", action="store_true",
         help="List of file types to combine."
@@ -100,8 +104,8 @@ def create_polyglot(input: str, create: str, verbose: bool = False):
 
 
 
-def merge_files(input: str, keep: str, output: str,verbose: bool = False, start: bool = False, end: bool = True, args=None):
-    # args.input, args.keep, args.output, args.start, args.end
+def merge_files(input: str, keep: str, output: str,verbose: bool = False, start: bool = False, overwrite: bool = False, args=None):
+    # args.input, args.keep, args.output, args.start
     print('merge_files: pendiente de implementar')
     if  (get_extension(input), get_extension(keep)) not in combinations_list.keys() or \
         get_extension(output) not in combinations_list[get_extension(input), get_extension(keep)]:
@@ -121,6 +125,11 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
         elif get_extension(input) == 'pdf' and get_extension(keep) == 'python':
             merge_pdf.merge_pdf_python(input, keep, output, verbose, start)
 
+        elif get_extension(input) == 'bmp' and get_extension(keep) == 'lua':
+            if overwrite:
+                merge_bitmap.merge_bitmap_lua_overwrite(input, keep, output, verbose)
+            else:
+                merge_bitmap.merge_bitmap_lua(input, keep, output, verbose)
         print(f"Polyglot file {output} created successfully.")
 
 
@@ -138,7 +147,7 @@ def directory_exists(file_path):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
-        description="Polyglot file generator combining multiple formats."
+        description = "Polyglot file generator combining multiple formats."
     )
     args = add_parse_args(parser)
 
@@ -188,12 +197,10 @@ if __name__ == "__main__":
             if not directory_exists(args.output):
                 print(f"Error: --output directory {args.output} does not exist.")
                 sys.exit(1)
-            if args.start and args.end:
-                print("Error: --hide-start and --hide-end cannot be used simultaneously. Use --help for more information.")
-                sys.exit(1)
+           
             
             # args.input, args.keep, args.output, args.start, args.end
-            merge_files(args.input, args.keep, args.output, args.verbose ,args.start, args.end, args)
+            merge_files(args.input, args.keep, args.output, args.verbose ,args.start, args.overwrite, args)
 
 
 
