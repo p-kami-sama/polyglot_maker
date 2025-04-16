@@ -33,6 +33,7 @@ combinations_list = {
     ('pdf','python'): ['pdf', 'python'],
 
     ('bmp','lua'): ['bmp', 'lua'],
+    ('bmp','js'): ['bmp', 'js'],
 
 }
 create_list = [
@@ -141,6 +142,12 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
                 merge_bitmap.merge_bitmap_lua_overwrite(input, keep, output, verbose)
             else:
                 merge_bitmap.merge_bitmap_lua(input, keep, output, verbose)
+        elif get_extension(keep) == 'js':
+            if overwrite:
+                merge_bitmap.merge_bitmap_js_overwrite(input, keep, output, verbose)
+            else:
+                merge_bitmap.merge_bitmap_js(input, keep, output, verbose)
+                
     print(f"Polyglot file {output} created successfully.")
 
 
