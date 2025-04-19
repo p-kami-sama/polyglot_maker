@@ -147,4 +147,3 @@ def create_bitmap_javascript(javascript_file: str, output_file: str, verbose: bo
         elif padding_size > 0:
             for _ in range(padding_size):
                 f.write("\n".encode("utf-8"))
-    print(f"BMP+JavaScript polyglot file created: {output_file}")

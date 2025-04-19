@@ -23,7 +23,11 @@ except ImportError:
     print('Error: Could not import local "create_bitmap.py" module. Please ensure it is in the same directory as this script.')
     sys.exit(1)
 
-
+try:
+    import create_gif as create_gif
+except ImportError:
+    print('Error: Could not import local "create_gif.py" module. Please ensure it is in the same directory as this script.')
+    sys.exit(1)
 
 combinations_list = {
     #--input, --keep, --output
@@ -40,6 +44,7 @@ create_list = [
     #--input, --create
     ['lua', 'bmp'],
     ['js', 'bmp'],
+    ['lua', 'gif'],
 ]
 
 
@@ -107,7 +112,10 @@ def create_polyglot(input: str, create: str, verbose: bool = False):
         create_bitmap.create_bitmap_lua(input, create, verbose)
     elif get_extension(input) == 'js' and get_extension(create) == 'bmp':
         create_bitmap.create_bitmap_javascript(input, create, verbose)
+    elif get_extension(input) == 'lua' and get_extension(create) == 'gif':
+        create_gif.create_gif(input, create, verbose)
 
+    print(f"Polyglot file {create} created successfully.")
 
 
 
@@ -148,7 +156,7 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
             else:
                 merge_bitmap.merge_bitmap_js(input, keep, output, verbose)
                 
-    print(f"Polyglot file {output} created successfully.")
+    print(f"Polyglot file {output} merged successfully.")
 
 
 def file_exists(file_path):
@@ -184,7 +192,7 @@ if __name__ == "__main__":
     if args.verbose:
         print("Verbose mode activated.")
 
-    print('overwrite:', args.overwrite) 
+        print('overwrite:', args.overwrite) 
 
     # create from 1 file
     if args.create:
