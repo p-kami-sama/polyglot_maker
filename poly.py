@@ -89,7 +89,14 @@ def add_parse_args(parser):
     parser.add_argument(
         "-v", "--verbose", action="store_true",
         help="Enable verbose mode to show process details."
-    )  
+    )
+
+    parser.add_argument(
+        "-p", "--pattern", type=str,
+        help='''Used to define the image pattern when creating GIF/Lua Polyglots.
+        Possible patterns: "stripes", "checkerboard", "blocks", and "waves".
+        Default value: "stripes"'''
+    ) 
 
     return parser.parse_args()
 
@@ -103,7 +110,7 @@ def get_extension(path: str) -> str:
 def types_list():
     print('types_list: pendiente de implementar')
 
-def create_polyglot(input: str, create: str, verbose: bool = False):
+def create_polyglot(input: str, create: str, verbose: bool = False, pattern: str = "stripes"):
     if [get_extension(input), get_extension(create)] not in create_list:
         print(f"Error: The creation of {get_extension(input)} into {get_extension(create)} is not supported.")
         sys.exit(1)
@@ -113,7 +120,7 @@ def create_polyglot(input: str, create: str, verbose: bool = False):
     elif get_extension(input) == 'js' and get_extension(create) == 'bmp':
         create_bitmap.create_bitmap_javascript(input, create, verbose)
     elif get_extension(input) == 'lua' and get_extension(create) == 'gif':
-        create_gif.create_gif(input, create, verbose)
+        create_gif.create_gif(input, create, verbose, pattern)
 
     print(f"Polyglot file {create} created successfully.")
 
@@ -206,8 +213,9 @@ if __name__ == "__main__":
             print(f"Error: --create directory {args.create} does not exist.")
             sys.exit(1)
         else:
+
             # args.input, args.create
-            create_polyglot(args.input, args.create, args.verbose)
+            create_polyglot(args.input, args.create, args.verbose, pattern =args.pattern or "stripes")
     
     # merge 2 files
     elif args.output:

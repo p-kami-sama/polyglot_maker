@@ -1,0 +1,10 @@
+python3 poly.py --input PoC/bmp/hello_world_lua/cat.bmp --keep PoC/bmp/hello_world_lua/hello_world_lua.lua --output PoC/bmp/hello_world_lua/cat_hello_world_lua.bmp
+
+
+python3 poly.py --input PoC/bmp/hello_world_lua/cat.bmp --keep PoC/bmp/hello_world_lua/hello_world_lua.lua --output PoC/bmp/hello_world_lua/cat_overwrite_hello_world_lua.bmp --overwrite
+
+python3 poly.py --input PoC/bmp/hello_world_lua/hello_world_lua.lua --create PoC/bmp/hello_world_lua/hello_world_lua.bmp
+
+
+
+

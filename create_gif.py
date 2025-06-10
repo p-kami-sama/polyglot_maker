@@ -63,7 +63,7 @@ def create_gif(lua_file: str, output_file: str, verbose: bool = False, pattern: 
 '''
     # end_code: Starts a multi-line comment with the rest of the image
     end_code = '''
---[['''
+a=[===['''
     payload = start_code + lua_code + end_code
     # Convert to bytes using UTF-8 encoding and then to a list of integers
     payload = list(payload.encode('utf-8'))
@@ -80,4 +80,4 @@ def create_gif(lua_file: str, output_file: str, verbose: bool = False, pattern: 
     img.putpalette(color_palett)
     img.save(output_file, format='GIF', optimize=True)
     with open(output_file, "a", encoding="utf-8") as f:
-        f.write("]]")
+        f.write("]===]")

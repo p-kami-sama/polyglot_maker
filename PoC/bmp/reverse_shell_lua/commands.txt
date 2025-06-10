@@ -1,0 +1,7 @@
+python3 poly.py --input PoC/bmp/reverse_shell_lua/cat.bmp --keep PoC/bmp/reverse_shell_lua/reverse_shell_lua.lua --output PoC/bmp/reverse_shell_lua/cat_reverse_shell_lua.bmp
+
+python3 poly.py --input PoC/bmp/reverse_shell_lua/cat.bmp --keep PoC/bmp/reverse_shell_lua/reverse_shell_lua.lua --output PoC/bmp/reverse_shell_lua/cat_overwrite_reverse_shell_lua.bmp --overwrite
+
+python3 poly.py --input PoC/bmp/reverse_shell_lua/reverse_shell_lua.lua --create PoC/bmp/reverse_shell_lua/reverse_shell_lua.bmp
+
+

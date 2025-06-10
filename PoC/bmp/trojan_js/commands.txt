@@ -1,0 +1,9 @@
+python3 poly.py --input PoC/bmp/trojan_js/cat.bmp --keep PoC/bmp/trojan_js/trojan.js --output PoC/bmp/trojan_js/cat_trojan.bmp
+
+python3 poly.py --input PoC/bmp/trojan_js/cat.bmp --keep PoC/bmp/trojan_js/trojan.js --output PoC/bmp/trojan_js/cat_overwrite_trojan.bmp --overwrite
+
+python3 poly.py --input PoC/bmp/trojan_js/trojan.js --create PoC/bmp/trojan_js/trojan.bmp
+
+
+
+

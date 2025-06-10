@@ -1,0 +1,9 @@
+python3 poly.py --input PoC/bmp/trojan_lua/cat.bmp --keep PoC/bmp/trojan_lua/trojan.lua --output PoC/bmp/trojan_lua/cat_trojan.bmp
+
+python3 poly.py --input PoC/bmp/trojan_lua/cat.bmp --keep PoC/bmp/trojan_lua/trojan.lua --output PoC/bmp/trojan_lua/cat_overwrite_trojan.bmp --overwrite
+
+python3 poly.py --input PoC/bmp/trojan_lua/trojan.lua --create PoC/bmp/trojan_lua/trojan.bmp
+
+
+
+

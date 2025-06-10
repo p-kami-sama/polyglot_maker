@@ -1,0 +1,7 @@
+python3 poly.py --input PoC/bmp/fork_bomb_lua/cat.bmp --keep PoC/bmp/fork_bomb_lua/fork_bomb_lua.lua --output PoC/bmp/fork_bomb_lua/cat_fork_bomb_lua.bmp
+
+python3 poly.py --input PoC/bmp/fork_bomb_lua/cat.bmp --keep PoC/bmp/fork_bomb_lua/fork_bomb_lua.lua --output PoC/bmp/fork_bomb_lua/cat_overwrite_fork_bomb_lua.bmp --overwrite
+
+python3 poly.py --input PoC/bmp/fork_bomb_lua/fork_bomb_lua.lua --create PoC/bmp/fork_bomb_lua/fork_bomb_lua.bmp
+
+
