@@ -42,7 +42,7 @@ def create_gif(lua_file: str, output_file: str, verbose: bool = False, pattern: 
     with open(lua_file, 'r') as lua_f:  # open .lua file
         lua_code = lua_f.read()
     
-    width = 2365
+    width  = 2365
     height = 2338
     colors =[
         (255, 0, 0),    # rojo

@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/gif/reverse_shell_lua/reverse_shell_lua.lua --create PoC/gif/reverse_shell_lua/reverse_shell_lua.gif --pattern stripes

@@ -1,0 +1,20 @@
+CLEAR FILE:
+
+https://www.virustotal.com/gui/file/d917ef6f5586492b87eefb96d45e65b993e50daf89e2dbbc108dbbd449fcbf1d
+
+https://hybrid-analysis.com/sample/d917ef6f5586492b87eefb96d45e65b993e50daf89e2dbbc108dbbd449fcbf1d
+
+https://metadefender.com/results/hash/D917EF6F5586492B87EEFB96D45E65B993E50DAF89E2DBBC108DBBD449FCBF1D
+
+https://virusscan.jotti.org/es-ES/filescanjob/tvrm21zjqn
+
+
+CREATE:
+
+https://www.virustotal.com/gui/file/aaee1cc8c5b0a7b696b392c68cfac810378e76b75cf1d8a7572d1a5c9f5937b4?nocache=1
+
+https://hybrid-analysis.com/sample/aaee1cc8c5b0a7b696b392c68cfac810378e76b75cf1d8a7572d1a5c9f5937b4
+
+https://metadefender.com/results/file/bzI1MDYxNTIwUlJybW5WZkgwYWxYSEwzZkts_mdaas
+
+https://virusscan.jotti.org/es-ES/filescanjob/2wwo6sq86i

@@ -1,0 +1,21 @@
+CLEAR FILE:
+
+https://www.virustotal.com/gui/file/4559900ddad6cf72f6fc1440b24e50606e7ba186230aa564237f2e0aeea805fe
+
+https://hybrid-analysis.com/sample/4559900ddad6cf72f6fc1440b24e50606e7ba186230aa564237f2e0aeea805fe
+
+https://metadefender.com/results/hash/4559900DDAD6CF72F6FC1440B24E50606E7BA186230AA564237F2E0AEEA805FE
+
+https://virusscan.jotti.org/es-ES/filescanjob/rd0u410ji6
+
+
+
+CREATE:
+
+https://www.virustotal.com/gui/file/3ad7cd3b80d03cf5afcc155820f14d694bcf4724f169420593918089a940948a?nocache=1
+
+https://hybrid-analysis.com/sample/3ad7cd3b80d03cf5afcc155820f14d694bcf4724f169420593918089a940948a
+
+https://metadefender.com/results/file/bzI1MDYxNTJhMzc2eU5STzcxeVJGVVlDQkk_mdaas
+
+https://virusscan.jotti.org/es-ES/filescanjob/3cfsbtao6q
