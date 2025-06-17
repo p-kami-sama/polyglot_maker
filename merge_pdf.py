@@ -95,7 +95,7 @@ def merge_pdf_ruby(pdf_file, ruby_file, output_file, verbose, append_at_the_begi
             output_f.write(hide_data)
 
 
-def merge_pdf_python(pdf_file, python_file, output_file, verbose, append_at_the_beginning = False):
+def merge_pdf_py(pdf_file, python_file, output_file, verbose, append_at_the_beginning = False):
     if append_at_the_beginning:
         if os.path.getsize(python_file) > 1000:
             print("The python file is too large to be appended at the beginning, it will be appended at the end. Files larger than 1000 bytes cannot be appended at the beginning.")

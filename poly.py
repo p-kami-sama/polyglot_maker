@@ -34,7 +34,7 @@ combinations_list = {
     ('pdf','mp3'): ['pdf', 'mp3'],
     ('pdf','sh'): ['pdf', 'sh'],
     ('pdf','rb'): ['pdf', 'rb'],
-    ('pdf','python'): ['pdf', 'python'],
+    ('pdf','py'): ['pdf', 'py'],
 
     ('bmp','lua'): ['bmp', 'lua'],
     ('bmp','js'): ['bmp', 'js'],
@@ -148,8 +148,8 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
             merge_pdf.merge_pdf_sh(input, keep, output, verbose, start)
         elif get_extension(keep) == 'rb':
             merge_pdf.merge_pdf_ruby(input, keep, output, verbose, start)
-        elif get_extension(keep) == 'python':
-            merge_pdf.merge_pdf_python(input, keep, output, verbose, start)
+        elif get_extension(keep) == 'py':
+            merge_pdf.merge_pdf_py(input, keep, output, verbose, start)
 
     elif get_extension(input) == 'bmp':
         if get_extension(keep) == 'lua':
