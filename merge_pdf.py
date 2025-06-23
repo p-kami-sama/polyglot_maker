@@ -1,6 +1,7 @@
 import os
 import random
 import string
+import re
 
 def merge_pdf_mp3(pdf_file, mp3_file, output_file, verbose, append_at_the_beginning = False):
     if append_at_the_beginning:
@@ -45,8 +46,8 @@ def merge_pdf_sh(pdf_file, sh_file, output_file, verbose, append_at_the_beginnin
     with open(pdf_file, 'rb') as pdf_f:
         pdf_data = pdf_f.read()
     
-    with open(sh_file, 'rb') as mp3_f:
-        hide_data = mp3_f.read()
+    with open(sh_file, 'rb') as sh_f:
+        hide_data = sh_f.read()
     
     with open(output_file, 'wb') as output_f:   # Creamos el archivo de salida en modo binario
 
@@ -134,3 +135,50 @@ def merge_pdf_py(pdf_file, python_file, output_file, verbose, append_at_the_begi
             output_f.write(pdf_data)
             output_f.write(b'"""\n')
             output_f.write(hide_data.encode("iso-8859-1"))
+
+
+
+def merge_pdf_sh_middle(pdf_file, sh_file, output_file, verbose: bool = False):
+
+    with open(pdf_file, 'rb') as pdf_f:
+        if verbose:
+            print("Reading PDF file...")
+        pdf_data = pdf_f.read()
+    
+    with open(sh_file, 'rb') as sh_f:
+        if verbose:
+            print("Reading shell script file...")
+        hide_data = sh_f.read()
+
+
+    # Buscar un punto adecuado entre los objetos del PDF
+    # Patrón común que indica final de un objeto: "endobj" seguido de una nueva línea
+    matches = list(re.finditer(rb'\nendobj[\r]?\n', pdf_data))
+    if not matches:
+        raise ValueError("PDF objects to insert the script not found. Ensure the PDF is valid and contains objects.")
+
+    # Punto intermedio entre objetos para la inserción
+    insert_pos = matches[len(matches) // 2].end()
+
+    # Dividir el PDF en dos partes:
+    pdf_part1 = pdf_data[:insert_pos]
+    pdf_part2 = pdf_data[insert_pos:]
+
+    # Generar una palabra aleatoria para usarse como comentario de Bash
+    random_comment_word = ''.join(random.choices(string.ascii_letters, k=random.randint(8, 12)))
+
+    if verbose:
+        print(f"Inserting shell script at position {insert_pos} in the PDF file.")
+    
+    # Payload Bash: se encierra la primera parte del PDF en un comentario multilinea
+    bash_payload = f": << '{random_comment_word}'\n".encode("utf-8")
+    bash_payload += pdf_part1
+    bash_payload += f"\n{random_comment_word}\n".encode("utf-8")
+
+    bash_payload += hide_data  # Agregar el script Bash como bytes
+    bash_payload += "\nexit\n".encode("utf-8")  # Finalizar el script Bash
+    
+    # Ensamblar el PDF final con Bash embebido
+    with open(output_file, "wb") as f:
+        f.write(bash_payload)
+        f.write(pdf_part2)

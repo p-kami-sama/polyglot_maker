@@ -73,12 +73,15 @@ def add_parse_args(parser):
 
     parser.add_argument(
         "-s", "--start", "--hide-start", action="store_true",
-        help="Hide extra data at the beginning of the file. It may not always be usable."
+        help="Hide extra data at the beginning of the PDF file. It may not always be usable."
     )
-
+    parser.add_argument(
+        "-m", "--middle", "--hide-middle", action="store_true",
+        help="Hide extra data in the middle of the PDF file. It may not always be usable."
+    )
     parser.add_argument(
         "--overwrite", action="store_true",
-        help="Overwrites part of the input file to hide the keep file better."
+        help="Overwrites part of the BMP input file to hide the keep file better."
     )
 
     parser.add_argument(
@@ -133,7 +136,7 @@ def validate_combination(input: str, keep: str, output: str):
         sys.exit(1)
 
 
-def merge_files(input: str, keep: str, output: str,verbose: bool = False, start: bool = False, overwrite: bool = False, args=None):
+def merge_files(input: str, keep: str, output: str,verbose: bool = False, start: bool = False, middle: bool = False, overwrite: bool = False, args=None):
     # args.input, args.keep, args.output, args.start
     validate_combination(input, keep, output)
     
@@ -142,6 +145,8 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
         print(f"Combining {input} and {keep} into {output}.")
         
     if get_extension(input) == 'pdf':
+        if middle and get_extension(keep) == 'sh':
+            merge_pdf.merge_pdf_sh_middle(input, keep, output, verbose)
         if get_extension(keep) == 'mp3':
             merge_pdf.merge_pdf_mp3(input, keep, output, verbose, start)
         elif get_extension(keep) == 'sh':
@@ -235,10 +240,4 @@ if __name__ == "__main__":
            
             
             # args.input, args.keep, args.output, args.start, args.end
-            merge_files(args.input, args.keep, args.output, args.verbose ,args.start, args.overwrite, args)
-# /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/juego.lua
-# /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/pichu.bmp
-'''
-python3 poly.py --input /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/pichu.bmp --keep /Users/paul/Desktop/pruebas_tfm/pruebas_creacion_bitmap/lua/juego.lua --output result.bmp
-
-'''
+            merge_files(args.input, args.keep, args.output, args.verbose ,args.start,args.middle, args.overwrite, args)
