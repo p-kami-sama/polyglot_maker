@@ -48,6 +48,10 @@ combinations_list = {
 
     ('jpg', 'pdf'): ['jpg', 'php', 'jpeg', 'jfif', 'pdf'],
     ('pdf', 'jpg'): ['jpg', 'php', 'jpeg', 'jfif', 'pdf'],
+
+    ('zip', 'sh'): ['zip', 'sh'],
+    ('jar', 'sh'): ['jar', 'sh'],
+
 }
 
 create_list = [
@@ -83,11 +87,11 @@ def add_parse_args(parser):
 
     parser.add_argument(
         "-s", "--start", "--hide-start", action="store_true",
-        help="Hide extra data at the beginning of the PDF file. It may not always be usable."
+        help="Hide extra data at the beginning of the PDF, JAR or ZIP file. It may not always be usable."
     )
     parser.add_argument(
         "-m", "--middle", "--hide-middle", action="store_true",
-        help="Hide extra data in the middle of the PDF file. It may not always be usable."
+        help="Hide extra data in the middle of the PDF or ZIP file. It may not always be usable."
     )
     parser.add_argument(
         "--overwrite", action="store_true",
@@ -257,6 +261,9 @@ if __name__ == "__main__":
             if not directory_exists(args.output):
                 print(f"Error: --output directory {args.output} does not exist.")
                 sys.exit(1)
-           
-            # args.input, args.keep, args.output, args.start, args.end
-            merge_files(args.input, args.keep, args.output, args.verbose ,args.start,args.middle, args.overwrite, args)
+            if args.start and args.middle:
+                print("WARNING: --start and --middle cannot be used simultaneously. The --start option will be used and --middle will be ignored. Use --help for more information.")
+                args.middle = False
+            
+            # args.input, args.keep, args.output, args.start, args.end args.middle
+            merge_files(args.input, args.keep, args.output, args.verbose ,args.start, args.middle, args.overwrite, args)
