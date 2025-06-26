@@ -36,15 +36,18 @@ except ImportError:
 
 combinations_list = {
     #--input, --keep, --output
-    ('pdf','mp3'): ['pdf', 'mp3'],
-    ('pdf','sh'): ['pdf', 'sh'],
-    ('pdf','rb'): ['pdf', 'rb'],
-    ('pdf','py'): ['pdf', 'py'],
+    ('pdf', 'mp3'): ['pdf', 'mp3'],
+    ('pdf', 'sh'): ['pdf', 'sh'],
+    ('pdf', 'rb'): ['pdf', 'rb'],
+    ('pdf', 'py'): ['pdf', 'py'],
 
-    ('bmp','lua'): ['bmp', 'lua'],
-    ('bmp','js'): ['bmp', 'js'],
+    ('bmp', 'lua'): ['bmp', 'lua'],
+    ('bmp', 'js'): ['bmp', 'js'],
 
-    ('jpg','php'): ['jpg', 'php', 'jpeg', 'jfif'],
+    ('jpg', 'php'): ['jpg', 'php', 'jpeg', 'jfif'],
+
+    ('jpg', 'pdf'): ['jpg', 'php', 'jpeg', 'jfif', 'pdf'],
+    ('pdf', 'jpg'): ['jpg', 'php', 'jpeg', 'jfif', 'pdf'],
 }
 
 create_list = [
@@ -163,6 +166,9 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
         elif get_extension(keep) == 'py':
             merge_pdf.merge_pdf_py(input, keep, output, verbose, start)
 
+        elif get_extension(keep) in ['jpg', 'jpeg', 'jfif']:
+            merge_jpg.merge_jpg_pdf(input, keep, output, verbose)
+
     elif get_extension(input) == 'bmp':
         if get_extension(keep) == 'lua':
             if overwrite:
@@ -177,7 +183,11 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
     
     
     elif get_extension(input) in ['jpg', 'jpeg', 'jfif'] and get_extension(keep) == 'php':
-        merge_jpg.merge_jpeg_php(input, keep, output, verbose)    
+        merge_jpg.merge_jpg_php(input, keep, output, verbose)    
+   
+    elif get_extension(input) in ['jpg', 'jpeg', 'jfif'] and get_extension(keep) == 'pdf':
+        merge_jpg.merge_jpg_pdf(keep, input, output, verbose)
+   
     print(f"Polyglot file {output} merged successfully.")
 
 
@@ -248,6 +258,5 @@ if __name__ == "__main__":
                 print(f"Error: --output directory {args.output} does not exist.")
                 sys.exit(1)
            
-            
             # args.input, args.keep, args.output, args.start, args.end
             merge_files(args.input, args.keep, args.output, args.verbose ,args.start,args.middle, args.overwrite, args)

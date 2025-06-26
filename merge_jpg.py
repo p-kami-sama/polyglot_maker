@@ -1,6 +1,5 @@
 import struct
 import os
-
 from zipfile import ZipFile
 
 
@@ -41,7 +40,7 @@ __HALT_COMPILER();
     return basecontent
 
 
-def merge_jpeg_php(jpeg_file: str, php_file: str, output_file: str, verbose: bool = False):
+def merge_jpg_php(jpeg_file: str, php_file: str, output_file: str, verbose: bool = False):
 
     # Leer el archivo JPEG
     with open(jpeg_file, 'rb') as f:
@@ -79,3 +78,49 @@ def merge_jpeg_php(jpeg_file: str, php_file: str, output_file: str, verbose: boo
     # Guardar el archivo de salida
     with open(output_file, 'wb') as f:
         f.write(polyglot_data)
+
+
+
+def merge_jpg_pdf(pdf_path, jpg_path, output_path, verbose: bool = False):
+        with open(jpg_path, 'rb') as jpg_file, open(pdf_path, 'rb') as pdf_file, open(output_path, 'wb') as out_file:
+            # Se escribe los primeros 14 bytes de la cabecera JPG. (obligatoriamente deben estar al principio)
+            header = jpg_file.read(0x14)
+            if len(header) != 0x14:
+                raise ValueError("Could not read JPG header")
+            out_file.write(header)
+            if verbose:
+                print(f"[✓] JPG header written: {header.hex()}")
+            # Se lee todo archivo JPG
+            jpg_file.seek(0, os.SEEK_END)
+            jpg_size = jpg_file.tell()
+            jpg_file.seek(0)
+            jpg_data = jpg_file.read()
+            if len(jpg_data) != jpg_size:
+                raise ValueError("The entire JPG could not be read.")
+
+            if verbose:
+                print(f"[✓] JPG file read successfully, size: {jpg_size} bytes")
+
+            # Se escribe un comentario JPEG, la cabeecera de un PDF y el comienzo de un objeto PDF que no se usara
+            pdf_header = b"\xff\xfe\x00\x22\n%PDF-1.5\n999 0 obj\n<<>>\nstream\n"
+            out_file.write(pdf_header)
+
+            # se busca desde Quantization Table (DQT) en adelante en el JPG
+            marker_index = jpg_data.find(b'\xff\xdb')
+            if marker_index == -1:
+                raise ValueError("JPG marker 0xFFDB not found")
+            out_file.write(jpg_data[marker_index:])
+
+            # Se cierra el stream PDF
+            out_file.write(b"endstream\nendobj\n")
+
+            if verbose:
+                print(f"[✓] JPG data written successfully, size: {len(jpg_data)} bytes")
+                print('Writing PDF data...')
+
+            # Despues se añaden el resto delarchivo PDF hasta el final
+            pdf_data = pdf_file.read()
+            if not pdf_data.startswith(b"%PDF"):
+                print("Warning: The PDF file does not start with %PDF, this may cause the polyglot to not work properly.")
+            out_file.write(pdf_data)
+
