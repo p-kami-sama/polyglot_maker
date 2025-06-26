@@ -16,7 +16,6 @@ except ImportError:
     print('Error: Could not import local "merge_bitmap.py" module. Please ensure it is in the same directory as this script.')
     sys.exit(1)
 
-
 try:
     import create_bitmap as create_bitmap
 except ImportError:
@@ -29,6 +28,12 @@ except ImportError:
     print('Error: Could not import local "create_gif.py" module. Please ensure it is in the same directory as this script.')
     sys.exit(1)
 
+try:
+    import merge_jpg as merge_jpg
+except ImportError:
+    print('Error: Could not import local "merge_jpg.py" module. Please ensure it is in the same directory as this script.')
+    sys.exit(1)
+
 combinations_list = {
     #--input, --keep, --output
     ('pdf','mp3'): ['pdf', 'mp3'],
@@ -39,7 +44,9 @@ combinations_list = {
     ('bmp','lua'): ['bmp', 'lua'],
     ('bmp','js'): ['bmp', 'js'],
 
+    ('jpg','php'): ['jpg', 'php', 'jpeg', 'jfif'],
 }
+
 create_list = [
     #--input, --create
     ['lua', 'bmp'],
@@ -167,7 +174,10 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
                 merge_bitmap.merge_bitmap_js_overwrite(input, keep, output, verbose)
             else:
                 merge_bitmap.merge_bitmap_js(input, keep, output, verbose)
-                
+    
+    
+    elif get_extension(input) in ['jpg', 'jpeg', 'jfif'] and get_extension(keep) == 'php':
+        merge_jpg.merge_jpeg_php(input, keep, output, verbose)    
     print(f"Polyglot file {output} merged successfully.")
 
 
