@@ -1,0 +1,11 @@
+javac HelloWorld.java
+
+echo -e "Main-Class: HelloWorld\n" > MANIFEST.MF\n
+
+jar cfm HelloWorld.jar MANIFEST.MF HelloWorld.class
+
+
+
+python3 poly.py -i PoC/zip/hello_world_jar_sh/HelloWorld.jar -k  PoC/zip/hello_world_jar_sh/HelloWorld.sh -o PoC/zip/hello_world_jar_sh/HelloWorld_polyglot_end.jar
+
+python3 poly.py -i PoC/zip/hello_world_jar_sh/HelloWorld.jar -k  PoC/zip/hello_world_jar_sh/HelloWorld.sh -o PoC/zip/hello_world_jar_sh/HelloWorld_polyglot_start.jar --start

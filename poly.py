@@ -34,6 +34,12 @@ except ImportError:
     print('Error: Could not import local "merge_jpg.py" module. Please ensure it is in the same directory as this script.')
     sys.exit(1)
 
+try:
+    import merge_zip as merge_zip
+except ImportError:
+    print('Error: Could not import local "merge_zip.py" module. Please ensure it is in the same directory as this script.')
+    sys.exit(1)
+
 combinations_list = {
     #--input, --keep, --output
     ('pdf', 'mp3'): ['pdf', 'mp3'],
@@ -192,6 +198,20 @@ def merge_files(input: str, keep: str, output: str,verbose: bool = False, start:
     elif get_extension(input) in ['jpg', 'jpeg', 'jfif'] and get_extension(keep) == 'pdf':
         merge_jpg.merge_jpg_pdf(keep, input, output, verbose)
    
+
+
+
+    elif get_extension(input) in ['jar', 'zip'] and get_extension(keep) == 'sh':
+        pos = 'end'
+        if start:
+            pos = 'start'
+        elif middle:
+            pos = 'middle'
+        if verbose:
+            print(f"Merging {input} and {keep} into {output} at position {pos}.")
+        merge_zip.merge_zip(input, keep, output, verbose, pos)
+
+
     print(f"Polyglot file {output} merged successfully.")
 
 

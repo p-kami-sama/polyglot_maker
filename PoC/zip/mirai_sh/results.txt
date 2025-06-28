@@ -1,0 +1,21 @@
+SOURCE OF THE MALWARE:
+
+
+CLEAR:
+https://www.virustotal.com/gui/file/3f0f42739381ea9745da634e8f5e67ffb87fd991606dda2f4e7e81fe1923b2fe
+
+https://hybrid-analysis.com/sample/3f0f42739381ea9745da634e8f5e67ffb87fd991606dda2f4e7e81fe1923b2fe
+
+https://metadefender.com/results/hash/3F0F42739381EA9745DA634E8F5E67FFB87FD991606DDA2F4E7E81FE1923B2FE
+
+https://virusscan.jotti.org/en-US/filescanjob/16acrwnj25
+
+
+START:
+
+
+
+MIDDLE:
+
+
+END:
