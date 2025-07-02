@@ -3,7 +3,7 @@ import os
 from zipfile import ZipFile
 
 
-def generate_base_phar(php_file):
+def generate_base_phar(php_file, verbose):
     tempname = 'temp.tar.phar'  # Archivo temporal para el PHAR
     # Eliminar archivo temporal si ya existe
     try:
@@ -18,15 +18,21 @@ def generate_base_phar(php_file):
         if len(php_code) > 65480:
             raise ValueError("The PHP code is too long to be included in a PHAR. The maximum size is 65,480 bytes.")
 
-        start_code = '''<?php
+        start_code = '''
+<?php
 echo "\n";
-?>'''
+?>
+'''
 
-        end_code = '''<?php
+        end_code = '''
+<?php
 exit(0);
 __HALT_COMPILER();
-?>'''
+?>
+'''
         php_code = start_code + php_code + end_code
+        if verbose:
+            print(php_code)
 
     # Se utiliza la librería ZipFile para crear el PHAR
     with ZipFile(tempname, 'w') as phar:
@@ -49,7 +55,7 @@ def merge_jpg_php(jpeg_file: str, php_file: str, output_file: str, verbose: bool
         print('Generating PHAR from PHP file...')
 
     # Crear el archivo polyglot a partir del archivo PHP 
-    phar_data = generate_base_phar( php_file)
+    phar_data = generate_base_phar(php_file, verbose)
     if verbose:
         print('PHAR data generated successfully.')
         print(f'PHAR data length: {len(phar_data)} bytes')
@@ -70,8 +76,8 @@ def merge_jpg_php(jpeg_file: str, php_file: str, output_file: str, verbose: bool
     if verbose:
         print(f'Checksum: {octal_checksum}')
     # Incluir el checksum
-    polyglot_data = new_data[:148] + octal_checksum.encode() + new_data[155:]
-    
+    # polyglot_data = new_data[:148] + octal_checksum.encode() + new_data[155:]
+    polyglot_data = new_data + octal_checksum.encode()
     if verbose:
         print(f'Polyglot file length: {len(polyglot_data)} bytes')
     
