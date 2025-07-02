@@ -1,0 +1,27 @@
+SOURCE OF THE MALWARE:
+https://bazaar.abuse.ch/sample/4206db272a53c503c51fd6ab2023ee4dc77d10aef81bb320ccda62f15a420ccd/
+
+CLEAR FILE:
+https://www.virustotal.com/gui/file/4206db272a53c503c51fd6ab2023ee4dc77d10aef81bb320ccda62f15a420ccd
+
+https://hybrid-analysis.com/sample/4206db272a53c503c51fd6ab2023ee4dc77d10aef81bb320ccda62f15a420ccd
+
+https://metadefender.com/results/hash/4206DB272A53C503C51FD6AB2023EE4DC77D10AEF81BB320CCDA62F15A420CCD
+
+https://virusscan.jotti.org/en-US/filescanjob/45u0gokdkh
+
+
+START:
+        The malware is too large to be obfuscated at the beginning of the PDF file.
+
+
+END:
+
+https://www.virustotal.com/gui/file/c2a4445915f21b98d943f3736694507285c2511e42490a49c19350e628894694?nocache=1
+
+https://hybrid-analysis.com/sample/c2a4445915f21b98d943f3736694507285c2511e42490a49c19350e628894694
+
+https://metadefender.com/results/file/bzI1MDYxOG82S0doaVU2S3pDYnNEeGhaMW9O_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/ka0rctwtpz
+

@@ -1,0 +1,32 @@
+SOURCE OF THE CODE:
+https://gist.github.com/gr33n7007h/c8cba38c5a4a59905f62233b36882325
+
+
+CLEAR FILE:
+https://www.virustotal.com/gui/file/127edcdb90abdc8a0cfc8d583287c2009c56cc0b21d0bf184778b0e9cd544384
+
+https://hybrid-analysis.com/sample/127edcdb90abdc8a0cfc8d583287c2009c56cc0b21d0bf184778b0e9cd544384
+
+https://metadefender.com/results/file/bzI1MDYxOHAyU1ZYSDJOZkJPaEJZQmd0OWJB_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/rn2iuimcbl
+
+
+START:
+https://www.virustotal.com/gui/file/5d08d7c56575ae56cc9c017e6fe23faa8aeb562d794ccb6149df660b14fe9de4?nocache=1
+
+https://hybrid-analysis.com/sample/5d08d7c56575ae56cc9c017e6fe23faa8aeb562d794ccb6149df660b14fe9de4
+
+https://metadefender.com/results/file/bzI1MDYxOEgyUTFGY0R3Rk9yUElYOVVpQnRR_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/mtrwj8r4as
+
+
+END:
+https://www.virustotal.com/gui/file/af5675f701dc60ae883bd86ace1b2488d86d198b8fe898e0483819a75bc6b009?nocache=1
+
+https://hybrid-analysis.com/sample/af5675f701dc60ae883bd86ace1b2488d86d198b8fe898e0483819a75bc6b009
+
+https://metadefender.com/results/file/bzI1MDYxOGlDUWg5ejdOSldubHVyTWtrbHNK_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/0df9cr92zb

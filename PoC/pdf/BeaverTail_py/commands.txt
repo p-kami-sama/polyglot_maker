@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/pdf/BeaverTail_py/sample.pdf --keep PoC/pdf/BeaverTail_py/BeaverTail.py --output PoC/pdf/BeaverTail_py/BeaverTail_end.pdf

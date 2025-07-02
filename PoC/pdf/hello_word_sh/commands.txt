@@ -1,0 +1,5 @@
+python3 poly.py --input PoC/pdf/hello_word_sh/book.pdf --keep PoC/pdf/hello_word_sh/hello_word_sh.sh --output PoC/pdf/hello_word_sh/hello_word_sh_end.pdf
+
+python3 poly.py --input PoC/pdf/hello_word_sh/book.pdf --keep PoC/pdf/hello_word_sh/hello_word_sh.sh --output PoC/pdf/hello_word_sh/hello_word_sh_start.pdf --start
+
+python3 poly.py --input PoC/pdf/hello_word_sh/book.pdf --keep PoC/pdf/hello_word_sh/hello_word_sh.sh --output PoC/pdf/hello_word_sh/hello_word_sh_middle.pdf --middle

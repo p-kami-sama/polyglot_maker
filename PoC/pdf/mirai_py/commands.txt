@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/pdf/mirai_py/sample.pdf --keep PoC/pdf/mirai_py/mirai.py --output PoC/pdf/mirai_py/mirai_end.pdf
