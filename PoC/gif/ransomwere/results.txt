@@ -1,0 +1,21 @@
+SOURCE OF THE MALWARE:
+Own creation
+
+CLEAR:
+https://www.virustotal.com/gui/file/70e377e0adc3632fe2bb911030602eb8db38f471d1d48e5b6ba7a48a3276493c?nocache=1
+
+https://hybrid-analysis.com/sample/ee6983a4fa3755ed6d57af9bf8ea39d65dc7f28976901f435f5e54e2532377c3
+
+https://metadefender.com/results/file/bzI1MDYxNWV4QXlTaUVDcVRjM29Jb0pjdERG_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/bio6sh2zqt
+
+
+CREATE:
+https://www.virustotal.com/gui/file/13c846098632b12460f57998375fdaabee0266ca978bdecfdb771b4fa41758bc?nocache=1
+
+https://hybrid-analysis.com/sample/13c846098632b12460f57998375fdaabee0266ca978bdecfdb771b4fa41758bc
+
+https://metadefender.com/results/file/bzI1MDYxNjJHTEN5NWtUbV8tX2xfRnBMdnBu_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/bc3mkxickr
