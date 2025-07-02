@@ -1,0 +1,22 @@
+SOURCE OFTHE CODE:
+https://bazaar.abuse.ch/sample/1f7ffb0a6a58be3ea87b8604e61ea0bc5372cfdeabf8f92efab2371e42e45338/
+
+
+CLEAR FILE:
+https://www.virustotal.com/gui/file/1f7ffb0a6a58be3ea87b8604e61ea0bc5372cfdeabf8f92efab2371e42e45338
+
+https://hybrid-analysis.com/sample/1f7ffb0a6a58be3ea87b8604e61ea0bc5372cfdeabf8f92efab2371e42e45338
+
+https://metadefender.com/results/file/bzI1MDYyN2N3YXJkSUtYV1JDbU53TlFEUElT_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/19ecjq4far
+
+
+POLYGLOT:
+https://www.virustotal.com/gui/file/0fc578880ca4daef634279e03e1775906d69962b0b98d1c1f534ac4043f02b94?nocache=1
+
+https://hybrid-analysis.com/sample/0fc578880ca4daef634279e03e1775906d69962b0b98d1c1f534ac4043f02b94
+
+https://metadefender.com/results/file/bzI1MDYyN3BMY21FcDJETWlGOUdCdWg1Yy0_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/rjpzzslc99

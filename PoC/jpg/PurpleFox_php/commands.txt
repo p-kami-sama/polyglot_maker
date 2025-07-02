@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/jpg/PurpleFox_php/cat.jpg --keep PoC/jpg/PurpleFox_php/PurpleFox_php.php --output PoC/jpg/PurpleFox_php/cat_PurpleFox_php.jpg

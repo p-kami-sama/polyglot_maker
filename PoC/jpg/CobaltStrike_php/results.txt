@@ -1,0 +1,25 @@
+SOURCE OFTHE CODE:
+https://bazaar.abuse.ch/sample/ca74f2f0eac8e36f41335fcce358415eca01a92ae141f9159b43c5c2bec65a54/
+
+CLEAR FILE:
+https://www.virustotal.com/gui/file/ca74f2f0eac8e36f41335fcce358415eca01a92ae141f9159b43c5c2bec65a54
+
+https://hybrid-analysis.com/sample/ca74f2f0eac8e36f41335fcce358415eca01a92ae141f9159b43c5c2bec65a54
+
+https://metadefender.com/results/file/bzI1MDYyN3NKTExEZElDNmVCQzFRYmdjRDA2_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/m04hsgapca
+
+
+POLYGLOT:
+https://www.virustotal.com/gui/file/c6c2c456a71c320dc99d21e291a3a485e61b08f6ae1e3d8eed7ea65af1836792?nocache=1
+
+https://hybrid-analysis.com/sample/c6c2c456a71c320dc99d21e291a3a485e61b08f6ae1e3d8eed7ea65af1836792
+
+https://metadefender.com/results/file/bzI1MDYyN2JWdkFDSC1SNEFWYUhvWnVjWHl4_mdaas	
+
+https://virusscan.jotti.org/en-US/filescanjob/pveru05izl
+
+
+
+

@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/jpg/hello_word_php/cat.jpg --keep PoC/jpg/hello_word_php/hello_world_php.php --output PoC/jpg/hello_word_php/cat_hello_world_php.jpg

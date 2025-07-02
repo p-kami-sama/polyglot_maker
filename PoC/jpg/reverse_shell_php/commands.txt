@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/jpg/reverse_shell_php/cat.jpg --keep PoC/jpg/reverse_shell_php/reverse_shell_php.php --output PoC/jpg/reverse_shell_php/cat_reverse_shell_php.jpg

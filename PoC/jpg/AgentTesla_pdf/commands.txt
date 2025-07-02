@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/jpg/AgentTesla_pdf/cat.jpg --keep PoC/jpg/AgentTesla_pdf/AgentTesla_pdf.pdf --output PoC/jpg/AgentTesla_pdf/cat_AgentTesla_pdf.jpg

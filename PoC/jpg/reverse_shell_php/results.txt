@@ -1,0 +1,23 @@
+SOURCE OFTHE CODE:
+https://www.revshells.com/	(PHP Pentest Monkey)
+
+
+CLEAR FILE:
+https://www.virustotal.com/gui/file/84dcba9b148996a4fec76c8ac88cb836e63d9e71744142a8fb4f21020b062f00
+
+https://hybrid-analysis.com/sample/84dcba9b148996a4fec76c8ac88cb836e63d9e71744142a8fb4f21020b062f00
+
+https://metadefender.com/results/file/bzI1MDYyNzdlZGZxOVVIZDkwX1k0ZEpjZUI_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/h8ociai4qu
+
+
+POLYGLOT:
+
+https://www.virustotal.com/gui/file/d65dff620a2367011cc081b62eb4516a57255a3d1b214fb6860b659fc3fc927d?nocache=1
+
+https://hybrid-analysis.com/sample/d65dff620a2367011cc081b62eb4516a57255a3d1b214fb6860b659fc3fc927d
+
+https://metadefender.com/results/file/bzI1MDYyN3JabFY0R0N3amxVUW1uZGROLUlH_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/nd41lwiebg

@@ -1,0 +1,23 @@
+SOURCE OFTHE CODE:
+http://helloworldcollection.de/#Unix%C2%A0Shell
+
+
+CLEAR FILE:
+https://www.virustotal.com/gui/file/516c609e64c826d09bd34389e75599fbc683b01051de08a096c388b857047d55?nocache=1
+
+https://hybrid-analysis.com/sample/516c609e64c826d09bd34389e75599fbc683b01051de08a096c388b857047d55
+
+https://metadefender.com/results/file/bzI1MDYyN1RtN0R0MXRGbFJkbXV2eU5oOGxl_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/rw8m0y78wl
+
+
+POLYGLOT:
+
+https://www.virustotal.com/gui/file/afa24af2edc8186961961b1f696cf3b0a02d4908c48d7f3314a22279c741aa04?nocache=1
+
+https://hybrid-analysis.com/sample/afa24af2edc8186961961b1f696cf3b0a02d4908c48d7f3314a22279c741aa04
+
+https://metadefender.com/results/file/bzI1MDYyN1FPTkFmNzFNOHZON1pVTUdyV194_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/8wg9mbfwha

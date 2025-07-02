@@ -1,0 +1,1 @@
+python3 poly.py --input PoC/jpg/CobaltStrike_php/cat.jpg --keep PoC/jpg/CobaltStrike_php/CobaltStrike.php --output PoC/jpg/CobaltStrike_php/cat_CobaltStrike.jpg
