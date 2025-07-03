@@ -131,7 +131,24 @@ def get_extension(path: str) -> str:
 
 
 def types_list():
-    print('types_list: pendiente de implementar')
+    print('--input, --keep, --output combinations:')
+    print(f"{'Input':<10} {'Keep':<10} {'Outputs'}")
+    print('-' * 40)
+
+    for key, value in combinations_list.items():
+        input_ext, keep_ext = key
+        output_exts = ' .'.join(value)
+        print(f".{input_ext:<10} .{keep_ext:<10} .{output_exts}")
+    
+    
+    print('\n\n--input, --create combinations:')
+    print(f"{'Input':<10} {'Create':<10}")
+    print('-' * 40)
+    for item in create_list:
+        input_ext, create_ext = item
+        print(f".{input_ext:<10} .{create_ext:<10}")
+
+
 
 def create_polyglot(input: str, create: str, verbose: bool = False, pattern: str = "stripes"):
     if [get_extension(input), get_extension(create)] not in create_list:
