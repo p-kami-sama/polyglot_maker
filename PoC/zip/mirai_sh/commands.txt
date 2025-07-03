@@ -1,0 +1,5 @@
+python3 poly.py --input PoC/zip/mirai_sh/book.zip --keep PoC/zip/mirai_sh/mirai.sh --output PoC/zip/mirai_sh/mirai_start.zip --start
+
+python3 poly.py --input PoC/zip/mirai_sh/book.zip --keep PoC/zip/mirai_sh/mirai.sh --output PoC/zip/mirai_sh/mirai_middle.zip --middle
+
+python3 poly.py --input PoC/zip/mirai_sh/book.zip --keep PoC/zip/mirai_sh/mirai.sh --output PoC/zip/mirai_sh/mirai_end.zip
