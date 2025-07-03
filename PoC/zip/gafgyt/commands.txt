@@ -1,0 +1,5 @@
+python3 poly.py --input PoC/zip/gafgyt/book.zip --keep PoC/zip/gafgyt/gafgyt.sh --output PoC/zip/gafgyt/gafgyt_start.sh --start
+
+python3 poly.py --input PoC/zip/gafgyt/book.zip --keep PoC/zip/gafgyt/gafgyt.sh --output PoC/zip/gafgyt/gafgyt_middle.sh --middle
+
+python3 poly.py --input PoC/zip/gafgyt/book.zip --keep PoC/zip/gafgyt/gafgyt.sh --output PoC/zip/gafgyt/gafgyt_end.sh    
