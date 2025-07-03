@@ -1,0 +1,57 @@
+SOURCE OF THE MALWARE
+
+	BASH:	https://bazaar.abuse.ch/sample/f18e352338ba21f9da7541c0025cc4c8a8febdebbe0bf057478ee3ce691571c8/ 
+
+	ZIP: 	https://bazaar.abuse.ch/sample/da776507672afdca20f7322294fc110216daa2e35e453ea45a19599e34788399/
+
+
+CLEAR BASH: 
+https://www.virustotal.com/gui/file/f18e352338ba21f9da7541c0025cc4c8a8febdebbe0bf057478ee3ce691571c8
+
+https://hybrid-analysis.com/sample/f18e352338ba21f9da7541c0025cc4c8a8febdebbe0bf057478ee3ce691571c8
+
+https://metadefender.com/results/hash/F18E352338BA21F9DA7541C0025CC4C8A8FEBDEBBE0BF057478EE3CE691571C8
+
+https://virusscan.jotti.org/en-US/filescanjob/qauozjyp1z
+
+
+CLEAN ZIP:
+
+https://www.virustotal.com/gui/file/da776507672afdca20f7322294fc110216daa2e35e453ea45a19599e34788399
+
+https://hybrid-analysis.com/sample/da776507672afdca20f7322294fc110216daa2e35e453ea45a19599e34788399
+
+https://metadefender.com/results/file/bzI1MDYyOVFFM0JlXzgxTXdwZEpxUElTcWhq_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/jqd0fciq8y
+
+
+START:
+https://www.virustotal.com/gui/file/dcb5699d43d8bad9c1435ed61d3d35d7f1f7e9590c8427e2425e06e5fd758edc?nocache=1
+
+https://hybrid-analysis.com/sample/dcb5699d43d8bad9c1435ed61d3d35d7f1f7e9590c8427e2425e06e5fd758edc
+
+https://metadefender.com/results/file/bzI1MDYyOV9vQjlxMjhldGNlcmxYSElTdFhR_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/l7oxkd68lb
+
+
+MIDDLE:
+https://www.virustotal.com/gui/file/876f1d8ed98c7f158691569a5165fc971084b27b8e5532d9c9289f6775fc97a0?nocache=1
+
+https://hybrid-analysis.com/sample/876f1d8ed98c7f158691569a5165fc971084b27b8e5532d9c9289f6775fc97a0
+
+https://metadefender.com/results/file/bzI1MDYyOVhqWkJzbXNRSWtNX0RnX0VUYkdo_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/gnnba03czy
+
+
+END:
+
+https://www.virustotal.com/gui/file/396e38cc580ada6c77b9e9609580602101a2fefaf3cbb89f11f073036a8b2d3d?nocache=1
+
+https://hybrid-analysis.com/sample/396e38cc580ada6c77b9e9609580602101a2fefaf3cbb89f11f073036a8b2d3d
+
+https://metadefender.com/results/file/bzI1MDYyOUtYUGZpVk50YVlaOXpkaVplOWFV_mdaas
+
+https://virusscan.jotti.org/en-US/filescanjob/cmcoikxr2s

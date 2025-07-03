@@ -1,0 +1,5 @@
+python3 poly.py --input PoC/zip/CoinMiner/CoinMiner_clear.zip --keep PoC/zip/CoinMiner/CoinMiner_clear.sh --output PoC/zip/CoinMiner/CoinMiner_start.zip --start
+
+python3 poly.py --input PoC/zip/CoinMiner/CoinMiner_clear.zip --keep PoC/zip/CoinMiner/CoinMiner_clear.sh --output PoC/zip/CoinMiner/CoinMiner_middle.zip --middle
+
+python3 poly.py --input PoC/zip/CoinMiner/CoinMiner_clear.zip --keep PoC/zip/CoinMiner/CoinMiner_clear.sh --output PoC/zip/CoinMiner/CoinMiner_end.zip 
