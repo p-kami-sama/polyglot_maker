@@ -1,0 +1,5 @@
+python3 poly.py --input AgentTesla.js --create AgentTesla.bmp
+
+python3 poly.py --input cat.bmp --keep  AgentTesla.js --output cat_AgentTesla.bmp
+
+python3 poly.py --input cat.bmp --keep  AgentTesla.js --output cat_overwrite_AgentTesla.bmp --overwrite   
