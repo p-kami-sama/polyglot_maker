@@ -1,0 +1,5 @@
+python3 poly.py --input StrelaStealer.js --create StrelaStealer.bmp
+
+python3 poly.py --input cat.bmp --keep StrelaStealer.js --output cat_overwrite_StrelaStealer.bmp --overwrite
+
+python3 poly.py --input cat.bmp --keep StrelaStealer.js --output cat_overwrite_StrelaStealer.bmp
